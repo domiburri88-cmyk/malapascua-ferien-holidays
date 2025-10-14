@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diving and Holidays in Malapascua</title>
 <style>
+h2 {
+  text-align: center;
+}
+
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family: Arial, sans-serif; background-color:#f4f9ff; color:#002b5c; scroll-behavior: smooth;}
 /* --- Slideshow Größe anpassen --- */
@@ -76,7 +80,20 @@ input, textarea {padding:10px; border:1px solid #ccc; border-radius:5px;}
 button {background-color:#004a99; color:white; padding:10px; border:none; border-radius:5px; cursor:pointer;}
 button:hover {background-color:#004a99;}
 footer {background-color:#000000; color:white; text-align:center; padding:20px; margin-top:40px;}
+
+/* Galerie-Abstand verkleinern */
+#gallery {
+  padding-top: 10px;
+}
+
+/* Abstand vor Kontakt verkleinern */
+#contact {
+  padding-top: 40px;   /* Standard war vermutlich 100px – kleiner machen */
+  margin-top: 0;       /* Entfernt zusätzlichen Abstand */
+}
+
 </style>
+
 </head>
 <body>
 <header>
@@ -160,6 +177,11 @@ We want Malapascua to be remembered by every visitor as a true holiday highlight
 
     </p>
   </div>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <!-- Hier kommt dein Slideshow-Code -->
 </section>
 
 
