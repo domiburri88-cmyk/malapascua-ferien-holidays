@@ -96,6 +96,21 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
 :target {
   scroll-margin-top: 100px; /* Höhe deines fixen Headers */
 }
+/* --- MOBILE FIX FOR LANGUAGE SWITCH --- */
+@media (max-width: 768px) {
+  .language-switch {
+    top: 10px;            /* etwas tiefer */
+    right: 10px;          /* leicht nach innen */
+    font-size: 14px;      /* kleinerer Text */
+    background-color: rgba(255, 255, 255, 0.8); /* besser lesbar */
+    padding: 4px 8px;
+    border-radius: 8px;
+  }
+
+  h2 {
+    margin-top: 80px;     /* genug Abstand, damit nichts überlappt */
+  }
+}
 
 </style>
 </head>
