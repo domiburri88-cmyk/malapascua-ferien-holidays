@@ -91,6 +91,10 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
   padding-top: 40px;   /* Standard war vermutlich 100px – kleiner machen */
   margin-top: 0;       /* Entfernt zusätzlichen Abstand */
 }
+/* --- Scroll-Offset Korrektur für Anker-Links wie #gallery oder #contact --- */
+:target {
+  scroll-margin-top: 100px; /* Höhe deines fixen Headers */
+}
 
 </style>
 
