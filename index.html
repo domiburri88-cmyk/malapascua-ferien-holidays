@@ -111,6 +111,36 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
     margin-top: 80px;     /* genug Abstand, damit nichts überlappt */
   }
 }
+/* --- Responsive Fix: Verhindert Überlappen von Sprache und Navigation --- */
+@media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px; /* Abstand zwischen Galerie / Kontakt */
+    margin-bottom: 5px;
+  }
+
+  nav a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .language-switch {
+    position: static; /* nicht absolut positioniert, damit sie sich mit verschiebt */
+    margin-top: 5px;
+    background-color: rgba(255, 255, 255, 0.1); /* leicht transparent */
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+}
 
 </style>
 </head>
