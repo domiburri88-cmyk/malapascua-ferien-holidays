@@ -70,7 +70,7 @@ nav a:hover {
   transform: scale(1.1); /* kleiner Hover-Effekt */
 }
 section {padding:100px 20px 60px 20px; max-width:900px; margin:auto;}
-.hero {background-color:#005bbb; color:white; text-align:center; padding:180px 20px;}
+.hero {background-color:#005bbb; color:white; text-align:center; padding:220px 20px 180px 20px;}
 .hero h1 {font-size:2.5rem; margin-bottom:10px;}
 .about {text-align:center;}
 .gallery {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:15px; margin-top:20px;}
@@ -141,7 +141,10 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
     border-radius: 6px;
   }
 }
-
+@media (max-width: 768px) {
+  .hero {
+    padding: 180px 20px 140px 20px; /* etwas weniger auf Handy, aber genug Abstand zum Header */
+  }
 </style>
 </head>
 <body>
