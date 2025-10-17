@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diving and Holidays in Malapascua</title>
+<title>Tauchen und Ferien in Malapascua</title>
 <style>
 h2 {
   text-align: center;
@@ -110,23 +110,44 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
     margin-top: 80px;     /* genug Abstand, damit nichts überlappt */
   }
 }
+/* --- Sprachbutton im Menü --- */
+.lang-btn {
+  background-color: #333;      /* leicht abgesetzt vom Rest */
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.lang-btn:hover {
+  background-color: #ffd700;
+  color: black;
+}
+
+/* --- MOBILE ANSICHT --- */
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .lang-btn {
+    margin-top: 5px;
+  }
+}
 
 </style>
-
 </head>
 <body>
 <header>
-  <div style="position:absolute; top:10px; right:20px;">
-    <a href="index.html" style="color:white; text-decoration:none;">DE</a>
-  </div>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About us</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <a href="#home">Start</a>
+    <a href="#about">Über uns</a>
+    <a href="#gallery">Galerie</a>
+    <a href="#contact">Kontakt</a>
+    <a href="index_en.html" class="lang-btn">EN</a>
   </nav>
 </header>
-
 <section id="home" class="hero" style="
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
               url('fuchshai.jpg') center/cover no-repeat;
@@ -134,74 +155,52 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
   text-align: center;
   padding: 180px 20px;
 ">
-  <h1>Diving and Holidays in Malapascua</h1>
-  <p>In the middle of Thresher sharks, islands and the local life</p>
+  <h1>Tauchen und Ferien in Malapascua</h1>
+  <p>Mitten unter Fuchshaien, Inseln und dem lokalen Leben</p>
 </section>
 
 <section id="about" class="about">
-  <h2>About Us</h2>
+  <h2>Über uns</h2>
 <br>
   <div class="about-section">
-    <h3>Who we are</h3>
+    <h3>Wer sind wir</h3>
     <p>
-      Great that you’ve landed on our page. It’s October 2025, and we’d love to briefly introduce ourselves: <p>
+      Toll, dass du auf unserer Seite gelandet bist. Es ist Oktober 2025 und gerne stellen wir uns kurz vor: <p>
 <br>
-Vanessa was born in 1996 and grew up on Malapascua. She is the oldest of seven siblings, and her father was the first local dive instructor on the island. Since 2014, Vanessa has been working with great passion and extensive knowledge as a dive guide and instructor in various dive centers in Malapascua. Since 2021, she has also been speaking and teaching in German, as she lived and worked in Switzerland from 2020 to 2024. In the Philippines and neighboring countries, she has already explored numerous dive sites.
- <p>
+Vanessa ist 1996 geboren und auf Malapascua aufgewachsen. Sie ist die Älteste von sieben Geschwistern und ihr Vater war der erste einheimische Tauchlehrer in Malapascua. Seit 2014 arbeitet Vanessa mit viel Herz und grossem Wissen als Tauchguide bzw. Tauchlehrerin in diversen Tauchschulen in Malapascua. Seit 2021 spricht und unterrichtet sie auch in Deutsch, da sie von 2020 bis 2024 einige Jahre in der Schweiz gelebt und gearbeitet hat. In den Philippinen sowie den umliegenden Ländern hat sie bereits diverse Tauchgebiete erkundet. <p>
 <br>
-Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 2017 and marrying her in 2019, he has been living alternately in Malapascua and Switzerland. He has been a dive instructor since 2017 and has explored various dive sites in and around Malapascua as well as across the Philippines, building many great connections along the way.
- <br>
+Dominik ist 1988 geboren und in der Schweiz aufgewachsen. Seit er Vanessa im Jahr 2017 kennengelernt und 2019 geheiratet hat, wohnt er abwechslungsweise in Malapascua und der Schweiz. Er ist seit 2017 Tauchlehrer und hat diverse Tauchgebiete in und um Malapascua bzw. die Philippinen kennengelernt und verschiedene gute Verbindungen aufgebaut. <br>
         </div>
 
   <div class="about-section">
-    <h3>Malapascua and its surroundings</h3>
+    <h3>In und um Malapascua</h3>
     <p>
-      The region around Malapascua offers authentic local island life, crystal-clear waters, beautiful beaches, and a rich underwater world — including thresher sharks, seahorses, nudibranchs, sea snakes, and vibrant, healthy coral reefs.
- <p>
+      Die Region rund um Malapascua bietet ein originelles Leben inmitten der Bevölkerung, kristallklares Wasser,
+      wunderschöne Strände und eine reiche Unterwasserwelt - darunter Fuchshaie, Seepferdchen, Nacktschnecken, Schlagen und farbenfrohe, gesunde Korallenriffe. <p>
 <br>
-Malapascua is not a typical tourist island where locals from the nearest big city come to work in resorts and visitors mostly interact with other foreigners. On Malapascua, the locals themselves live and work on the island — you’re truly part of the local life. That’s what makes this island so special.
-
-Since Filipinos of all ages speak English very well, communication is easy. Their openness and hospitality can be felt everywhere, allowing you to move around freely and feel welcome wherever you go. At the local market, you’ll share meals with residents, and if you like, you can later join them for karaoke or try *balot* — a traditional Filipino snack.
- <p>
+Malapascua ist nicht eine typische Touristeninsel, wo einfach Einheimische aus der nächsten grossen Stadt in den touristischen Anlagen arbeiten und man nur Kontakt zu anderen Ausländern hat. In Malapascua leben und arbeiten die Einheimischen von Malapascua selbst - und man ist mitten im lokalen Geschehen. Das macht die Insel zu etwas ganz Besonderem. Da die Filipinos von jung bis alt sehr gut Englisch sprechen, fällt der Austausch leicht. Die Offenheit und Gastfreundschaft spürt man überall und man kann sich dementsprechend komplett frei bewegen und ist überall willkommen. Im lokalen Markt isst man zusammen mit den Einheimischen, und bei Bedarf kann man sich ihnen danach bei Karaoke oder *Balot* (spezieller Filipino Snack) anschliessen. <p>
 <br>
-Even for non-divers, car-free Malapascua has a lot to offer — stunning white sandy beaches, breathtaking deep-red sunsets, delicious happy hours, relaxing massages, yoga, snorkeling, island hopping, and much more.
-<p>
+Auch für Nichttaucher bietet das autofreie Malapascua viel - traumhafte weisse Sandstrände, bombastische tiefrote Sonnenuntergänge, leckere Happy hours, entspannende Massagen, Yoga, Schnorcheln, Inselhüpfen und vieles mehr.<p>
 <br>
- Of course, Malapascua is known as one of the world’s top diving destinations. Beautiful, healthy soft coral reefs, black coral forests, steep walls, pinnacles, tunnels, and sandy macro areas offer incredible variety. Water temperatures range between a pleasant 26 and 30°C throughout the year, making night dives highly recommended as well.
-
-Underwater, you can spot thresher sharks, tiger sharks, reef sharks (whitetip and young blacktip), devil rays, turtles, sea snakes, a wide range of nudibranchs including the Spanish dancer, seahorses (including pygmy ones), frogfish, various scorpionfish, batfish, mackerel, octopuses (including the blue-ringed octopus), cuttlefish, crabs of all sizes, and the beautiful mandarin fish during their mating ritual — all year round.
- <p>
+ Natürlich ist Malapascua als eines der weltweiten Top-Tauchgebiete bekannt. Wunderschöne gesunde Weichkorallenriffe, Wälder von Schwarzkorallen, Steilwände, Pinnacles, Tunnels und sandige Makroflächen bieten eine grosse Abwechslung. Die Wassertemperatur liegt je nach Monat zwischen angenehmen 26 und 30 Grad, so sind auch die möglichen Nachttauchgänge empfehlenswert. Unter Wasser kann man ganzjährig sehen: Fuchshaie, Tigerhaie, Riffhaie (Weissspitzen und junge Schwarzspitzen), Teufelsrochen, Schildkröten, Schlangen, diverse Nacktschnecken inkl. Spanish dancer, Seepferdchen (auch Pygmäen), Anglerfische, verschiedene Drachenköpfe, Fledermausfische, Makrelen, Oktopusse (inkl. blaugeringelter), Sepias, Krabben von klein bis gross und die wunderschönen Mandarinfische beim Paaren etc. <p>
 <br>
-Around Cebu Airport — the main gateway to Malapascua — there are many great areas for both divers and non-divers that can easily be combined with a stay on Malapascua without losing much travel time. These include Cebu itself, as well as Bohol, Siquijor, Moalboal, Dauin, and more. With a flight to Cebu, you’ve already landed right in the middle of paradise.
-
+Rund um den Flughafen Cebu, von wo aus man nach Malapascua reist, gibt es viele tolle Gebiete für Taucher sowie Nichttaucher, welche sich perfekt mit Malapascua verbinden lassen, ohne dass man viel Transferzeit verliert. Zu diesen Gebieten zählt Cebu selbst, wie auch Bohol, Siquijor, Moalboal, Dauin etc. Mit einem Flug nach Cebu ist man mitten im Paradies gelandet.
     </p>
   </div>
 
   <div class="about-section">
-    <h3>What we offer</h3>
+    <h3>Was bieten wir</h3>
     <p>
-      We run this page purely out of passion and love for the island. The local community depends on tourism, and we want to do our part to help. We’re not a typical travel agency — we aim to be something better.
-
-Thanks to Vanessa’s family on the island and our many years of living and working there, we know Malapascua, its resorts, dive centers, and locals inside out and always stay up to date. The Philippines is a developing country where conditions constantly change — new transfer routes, dive centers opening and closing, attractions coming and going. Also, expensive doesn’t always mean good, and cheap doesn’t always mean bad — that’s where experience truly matters.
-
-That’s why having a local contact is so valuable — and that’s us: **Swiss quality combined with genuine, independent local knowledge.**
- <p>
+      Diese Seite betreiben wir aus reinem Spass und Liebe zur Insel. Die Einheimischen brauchen den Tourismus, und da wollen wir helfen. Wir sind also kein klassisches Reisebüro - wir wollen etwas Besseres sein. Durch Vanessa's Familie auf der Insel sowie unserem jahrelangen Leben und Arbeiten vor Ort kennen wir die Insel, Resorts, Tauchschulen und Einheimischen bestens und sind immer auf dem neuesten Stand. Die Philippinen sind ein Drittweltland und ständig ändern sich die Gegebenheiten wieder und wieder (neue Transferwege, Tauchschulen öffnen und schliessen, Attraktionen kommen und gehen). Auch heisst teuer nicht = gut und günstig nicht = schlecht, da braucht es genau die Erfahrung. Deshalb ist es toll, einen Kontakt vor Ort zu haben: Das wären dann wir - **Schweizer Qualität mit einheimischem unabhängigem Wissen**. <p>
 <br>
-We’re more than happy to help wherever we can. In the end, not only you benefit from it — the island and its locals do as well, which makes us truly happy.
-
-Ask us anything! We’ll gladly share tips, recommendations, advice, and plenty of extra information about food, activities, and special places. For Malapascua itself, we can connect you with resorts and dive centers based on your needs, and help organize transfers or other activities. Once you’re on the island, we can also provide support on site if desired.
-
-We want Malapascua to be remembered by every visitor as a true holiday highlight — whether diver or non-diver, single or couple, young or old, with or without children.
-
-    </p>
+Mit grosser Freude helfen wir, wo wir können. Davon profitieren neben euch schlussendlich auch die Insel und die Einheimischen, was uns wiederum glücklich macht. Löchert uns mit Fragen, und wir geben euch Tipps und Tricks, Empfehlungen, Hinweise und viele zusätzliche Informationen zum Essen, für Aktivitäten und speziellen Orten. Für Malapascua selbst können wir euch je nach Bedürfnis mit Resorts und Tauchschulen verbinden und Transfers sowie sonstige Aktivitäten organisieren. Vor Ort gibt's dann natürlich auch entsprechend Unterstützung, wenn erwünscht. Malapascua soll allen Besuchern als Highlight-Ferienziel in Erinnerung bleiben - egal ob Taucher oder Nichttaucher, Single oder Paar, jung oder alt, mit oder ohne Kindern.
   </div>
 </section>
 
 <section id="gallery">
-  <h2>Gallery</h2>
+  <h2>Galerie</h2>
   <!-- Hier kommt dein Slideshow-Code -->
 </section>
-
 
 <!-- 🔸 Slideshow Start -->
 <div class="slideshow-container">
@@ -283,19 +282,18 @@ We want Malapascua to be remembered by every visitor as a true holiday highlight
 
 
 <section id="contact">
-<h2>Contact</h2>
-<p>Write us for any questions, concrete planning, or individual requests (afterwards also possible via WhatsApp or Instagram):
-</p>
+<h2>Kontakt</h2>
+<p>Schreib uns für Fragen, die konkrete Planung oder individuelle Wünsche hier (danach auch via Whatsapp oder Instagram möglich):</p>
 <form action="https://formspree.io/f/xvgwwvez" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="_replyto" placeholder="Your E-Mail" required>
-<textarea name="message" rows="5" placeholder="Message" required></textarea>
-<button type="submit">Send Message</button>
+<input type="text" name="name" placeholder="Dein Name" required>
+<input type="email" name="_replyto" placeholder="Deine E-Mail" required>
+<textarea name="message" rows="5" placeholder="Nachricht" required></textarea>
+<button type="submit">Nachricht senden</button>
 </form>
 </section>
 
 <footer>
-<p>© 2025 Vanessa & Dominik – Diving and Holidays in Malapascua</p>
+<p>© 2025 Vanessa & Dominik – Tauchen und Ferien in Malapascua</p>
 </footer>
 </body>
 <!-- 🔸 Slideshow Script -->
