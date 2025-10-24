@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.malapascua.asia/sitemap.xml
+Sitemap: https://www.malapascua.asia/sitemap.txt
