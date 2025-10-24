@@ -1,14 +1,2 @@
 User-agent: *
 Allow: /
-
-# Blockiere unnötige oder doppelte Pfade
-Disallow: /assets/
-Disallow: /images/
-Disallow: /scripts/
-Disallow: /css/
-Disallow: /README.md
-Disallow: /LICENSE
-Disallow: /CNAME
-
-# Sitemap-Verweise (für beide Sprachen)
-Sitemap: https://malapascua.asia/sitemap.xml
