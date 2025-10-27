@@ -5,31 +5,38 @@ h2 {
 
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family: Arial, sans-serif; background-color:#f4f9ff; color:#002b5c; scroll-behavior: smooth;}
-/* --- Slideshow Größe anpassen --- */
+/* --- Slideshow GRÖSSE UND POSITIONIERUNG (KORREKT) --- */
 .slideshow-container {
-  max-width: 900px;
-  position: relative;
-  margin: 40px auto;
-  background-color: #000;
-  overflow: hidden;
-  border-radius: 10px;
+  max-width: 900px;
+  position: relative;
+  margin: 40px auto !important;
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 10px;
+  
+  /* NEU: Feste Höhe über das Padding basierend auf 900x400 Verhältnis (~44.44%) */
+  padding-bottom: 44.44%; /* WICHTIG: Erzeugt die Höhe des Containers */
+  height: 0; /* Stellt sicher, dass die Höhe durch padding-bottom kontrolliert wird */
 }
 
-.mySlides img {
-  width: 100%;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-/* --- WICHTIGE HINZUGEFÜGTE REGEL --- */
+/* Die einzelnen Slides liegen jetzt absolut im Container */
 .mySlides {
-    display: none; /* Versteckt die Bilder standardmäßig, bis JavaScript sie einblendet */
-    position: absolute; /* Lässt die Slides übereinander liegen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: none; /* Versteckt die Bilder standardmäßig, bis JavaScript sie einblendet */
+    position: absolute; /* Lässt die Slides übereinander liegen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Bezieht sich jetzt auf die über Padding definierte Höhe */
 }
+
+/* Die Bilder füllen die Slides aus */
+.mySlides img {
+  width: 100%;
+  height: 100%; /* Nutzt die 100% Höhe des mySlides-Containers */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 .about-section {
   margin-bottom: 30px;
 }
