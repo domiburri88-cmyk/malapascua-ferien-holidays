@@ -214,16 +214,9 @@ Dominik ist 1988 geboren und in der Schweiz aufgewachsen. Seit er Vanessa im Jah
 <!-- 🔸 Slideshow Script -->
 <script>
 let slideIndex = 0;
-const slideshowContainer = document.querySelector('.slideshow-container');
 
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            showSlides();
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 });
+// Startet die Slideshow sofort beim Laden
+showSlides(); 
 
 function showSlides() {
     let i;
@@ -234,17 +227,18 @@ function showSlides() {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
+    if (slideIndex > slides.length) { slideIndex = 1 }
 
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
+    // WICHTIG: Setzt das erste Bild auf sichtbar
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 4000); // wechselt alle 4 Sekunden
 }
 
-observer.observe(slideshowContainer);
+// Der IntersectionObserver-Teil MUSS hier entfernt werden!
 </script>
 </html>
