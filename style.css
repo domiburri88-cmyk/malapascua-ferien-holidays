@@ -5,37 +5,33 @@ h2 {
 * {margin:0; padding:0; box-sizing:border-box;}
 body {font-family: Arial, sans-serif; background-color:#f4f9ff; color:#002b5c; scroll-behavior: smooth;}
 
-/* --- Slideshow GRÖSSE UND POSITIONIERUNG (KORREKT) --- */
 .slideshow-container {
-  max-width: 900px;
-  position: relative;
-  margin: 40px auto !important;
-  background-color: #000;
-  overflow: hidden;
-  border-radius: 10px;
-  
-  /* NEU: Feste Höhe über das Padding basierend auf 900x400 Verhältnis (~44.44%) */
-  padding-bottom: 44.44%; /* WICHTIG: Erzeugt die Höhe des Containers */
-  height: 0; /* Stellt sicher, dass die Höhe durch padding-bottom kontrolliert wird */
+  max-width: 900px;
+  position: relative;
+  margin: 40px auto;
+  background-color: #000;
+  overflow: hidden;
+  border-radius: 15px; /* schöne, deutlich sichtbare runde Ecken */
+  aspect-ratio: 16 / 9; /* feste Proportion, ersetzt das komplizierte padding-bottom */
 }
 
-/* Die einzelnen Slides liegen jetzt absolut im Container */
+/* Alle Slides überlagern sich exakt */
 .mySlides {
-    display: none; /* Versteckt die Bilder standardmäßig, bis JavaScript sie einblendet */
-    position: absolute; /* Lässt die Slides übereinander liegen */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; /* Bezieht sich jetzt auf die über Padding definierte Höhe */
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* Die Bilder füllen die Slides aus */
+/* Die Bilder passen sich perfekt an, füllen den Container */
 .mySlides img {
-  width: 100%;
-  height: 100%; /* Nutzt die 100% Höhe des mySlides-Containers */
-  object-fit: cover;
-  border-radius: 8px;
-display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* füllt das Bild sauber aus */
+  border-radius: 15px; /* gleiche Rundung wie Container */
+  display: block;
 }
 
 /* Die grauen Flächen mit Haupttexten */
@@ -175,10 +171,28 @@ footer {background-color:#000000; color:white; text-align:center; padding:20px; 
   margin: 20px auto; /* mittig und mit Abstand */
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-/* --- Einheitlicher Stil für alle Hauptabschnitte --- */
+/* Abstände zwischen verschiedenen Themen */
 section {
-  max-width: 900px;       /* gleiche Breite für alle Abschnitte */
-  margin: 10px auto;         /* zentriert den gesamten Abschnitt horizontal */
-  text-align: center;     /* zentriert Titel und Text im Abschnitt */
-  padding: 60px 20px;     /* gleichmäßiger Innenabstand (oben/unten & seitlich) */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 20px; /* nur seitliche Abstände, kein oben/unten */
 }
+#about {
+  padding: 70px 20px 40px 20px; /* oben / rechts / unten / links */
+}
+
+#gallery {
+  padding: 10px 20px 20px 20px;
+}
+
+#contact {
+  padding: 70px 20px 60px 20px;
+}
+#gallery {
+  scroll-margin-top: 60px; /* Höhe deines fixen Headers */
+}
+.slideshow-container {
+  margin-bottom: 40px; /* Abstand nach unten */
+}
+
