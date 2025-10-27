@@ -223,22 +223,11 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
 <!-- 🔸 Slideshow Script -->
 <script>
 let slideIndex = 0;
-const slideshowContainer = document.querySelector('.slideshow-container');
 
-// Erstelle einen Observer, der prüft, wann das Slideshow-Element sichtbar wird
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Starte die Slideshow NUR, wenn sie sichtbar ist
-            showSlides();
-            // Stoppe die Überwachung, da wir das Script nur einmal starten müssen
-            observer.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1 }); // Starte, sobald 10% des Containers sichtbar sind
+// Startet die Slideshow sofort beim Laden
+showSlides(); 
 
 function showSlides() {
-    // ... Ihr vorhandener Slideshow-Code ...
     let i;
     const slides = document.getElementsByClassName("mySlides");
     const dots = document.getElementsByClassName("dot");
@@ -247,18 +236,18 @@ function showSlides() {
         slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1; }
+    if (slideIndex > slides.length) { slideIndex = 1 }
 
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
 
+    // WICHTIG: Setzt das erste Bild auf sichtbar
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " active";
     setTimeout(showSlides, 4000); // wechselt alle 4 Sekunden
 }
 
-// Beobachte den Slideshow-Container
-observer.observe(slideshowContainer);
+// Der IntersectionObserver-Teil MUSS hier entfernt werden!
 </script>
 </html>
