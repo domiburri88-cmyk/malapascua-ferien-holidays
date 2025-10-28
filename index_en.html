@@ -164,41 +164,22 @@ Dominik ist 1988 geboren und in der Schweiz aufgewachsen. Seit er Vanessa im Jah
 </section>
 
 <section id="video" style="text-align:center;">
-  <h2></h2>
- <div class="video-wrapper">
-    <iframe
-    src="https://www.youtube.com/embed/HROVmgfjURw?si=vKNY5qWkckn6w666"
-    frameborder="0"
-    allowfullscreen
-loading="lazy">
-  </iframe>
-</div>
-</section>
-
 <br>
-<section id="video" style="text-align:center;">
-  <h2></h2>
- <div class="video-wrapper">
-    <iframe
-    src="https://www.youtube.com/embed/QYg4Pf0vNTQ?si=pDPITUdA50uFT4py"
-    frameborder="0"
-    allowfullscreen
-loading="lazy">
-  </iframe>
-</div>
-</section>
-
+  <h2>Unsere Videos</h2>
 <br>
-<section id="video" style="text-align:center;">
-  <h2></h2>
- <div class="video-wrapper">
-    <iframe
-    src="https://www.youtube.com/embed/0i07IbMTH-g?si=LAwsfjNpgVCnoGBl"
-    frameborder="0"
-    allowfullscreen
-loading="lazy">
-  </iframe>
-</div>
+<br>
+<br>
+  <div class="youtube-lazy" data-id="HROVmgfjURw">
+    <div class="play-button"></div>
+  </div>
+
+  <div class="youtube-lazy" data-id="QYg4Pf0vNTQ">
+    <div class="play-button"></div>
+  </div>
+
+  <div class="youtube-lazy" data-id="0i07IbMTH-g">
+    <div class="play-button"></div>
+  </div>
 </section>
 
 <section id="contact">
@@ -216,6 +197,30 @@ loading="lazy">
 <footer>
 <p>© 2025 Vanessa & Dominik – Tauchen und Ferien in Malapascua</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const videos = document.querySelectorAll(".youtube-lazy");
+
+  videos.forEach(el => {
+    const id = el.dataset.id;
+    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+
+    el.style.backgroundImage = `url('${thumb}')`;
+
+    el.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      iframe.title = "YouTube video player";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      el.replaceWith(iframe);
+    });
+  });
+});
+</script>
 </body>
 <!-- 🔸 Slideshow Script -->
 <script>
