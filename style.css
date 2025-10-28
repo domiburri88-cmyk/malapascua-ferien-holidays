@@ -196,24 +196,6 @@ section {
   margin-bottom: 40px; /* Abstand nach unten */
 }
 
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 560px;   /* gleiche Breite wie dein Video */
-  margin: 20px auto;  /* zentriert und mit Abstand */
-  aspect-ratio: 16 / 9;  /* erzwingt 16:9 */
-  overflow: hidden;
-  border-radius: 10px;
-}
-
-.video-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;  /* füllt den Container perfekt aus */
-  display: block;
-  border-radius: 10px;
-}
-
 .youtube-lazy {
   position: relative;
   width: 100%;

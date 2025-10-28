@@ -172,14 +172,17 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
   <h2>Unsere Videos</h2>
 <br>
 <br>
-<br>
-  <!-- Video-Container -->
-  <div class="video-wrapper" data-video-id="HROVmgfjURw"></div>
-<br>
-  <div class="video-wrapper" data-video-id="QYg4Pf0vNTQ"></div>
-<br>
-  <div class="video-wrapper" data-video-id="0i07IbMTH-g"></div>
+  <div class="youtube-lazy" data-id="HROVmgfjURw">
+    <div class="play-button"></div>
+  </div>
 
+  <div class="youtube-lazy" data-id="QYg4Pf0vNTQ">
+    <div class="play-button"></div>
+  </div>
+
+  <div class="youtube-lazy" data-id="0i07IbMTH-g">
+    <div class="play-button"></div>
+  </div>
 </section>
 
 <section id="contact">
@@ -199,44 +202,30 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
 <p>© 2025 Vanessa & Dominik – Diving and Holidays in Malapascua</p>
 </footer>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const videos = document.querySelectorAll(".video-wrapper");
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const videos = document.querySelectorAll(".youtube-lazy");
 
-    videos.forEach(video => {
-      const id = video.dataset.videoId;
-      video.innerHTML = `
-        <div class="video-thumb" style="position:relative;cursor:pointer;">
-          <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg"
-               alt="Video Vorschau"
-               style="width:100%;border-radius:10px;"
-               loading="lazy">
-          <div style="
-            position:absolute;
-            top:50%;
-            left:50%;
-            transform:translate(-50%,-50%);
-            font-size:60px;
-            color:white;
-            text-shadow:0 0 10px rgba(0,0,0,0.7);">
-            ▶
-          </div>
-        </div>
-      `;
+  videos.forEach(el => {
+    const id = el.dataset.id;
+    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
 
-      video.addEventListener("click", () => {
-        video.innerHTML = `
-          <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/${id}?autoplay=1"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-            style="width:100%;border-radius:10px;">
-          </iframe>`;
-      });
+    el.style.backgroundImage = `url('${thumb}')`;
+
+    el.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+      iframe.title = "YouTube video player";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.border = "none";
+      el.replaceWith(iframe);
     });
   });
-  </script>
+});
+</script>
 </body>
 <!-- 🔸 Slideshow Script -->
 <script>
