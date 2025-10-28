@@ -196,3 +196,29 @@ section {
   margin-bottom: 40px; /* Abstand nach unten */
 }
 
+/* --- RESPONSIVE VIDEO EMBEDS --- */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;   /* maximale Breite auf Desktop */
+  margin: 0 auto;     /* zentriert */
+  aspect-ratio: 16 / 9; /* sorgt für korrekte Proportion */
+  border-radius: 10px;
+  overflow: hidden;   /* verhindert überstehende Ränder */
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* --- MOBILE FIX (optional, falls du sie noch etwas kleiner willst) --- */
+@media (max-width: 768px) {
+  .video-wrapper {
+    max-width: 90%;  /* lässt links/rechts etwas Abstand */
+  }
+}
