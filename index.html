@@ -168,27 +168,12 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
 <!-- 🔸 Slideshow Ende -->
 </section>
 
-<section id="video" style="text-align:center;">
-  <h2></h2>
-<div class="youtube-lazy" data-id="HROVmgfjURw?si=vKNY5qWkckn6w666">
-  <div class="play-button"></div>
-</div>
-</section>
+<section id="videos" style="text-align:center;">
+  <h2>Unsere Videos</h2>
 
-<br>
-<section id="video" style="text-align:center;">
-  <h2></h2>
-<div class="youtube-lazy" data-id="QYg4Pf0vNTQ?si=pDPITUdA50uFT4py">
-  <div class="play-button"></div>
-</div>
-</section>
-
-<br>
-<section id="video" style="text-align:center;">
-  <h2></h2>
-<div class="youtube-lazy" data-id="0i07IbMTH-g?si=LAwsfjNpgVCnoGBl">
-  <div class="play-button"></div>
-</div>
+  <div class="youtube-lazy" data-id="HROVmgfjURw?si=vKNY5qWkckn6w666"></div>
+  <div class="youtube-lazy" data-id="QYg4Pf0vNTQ?si=pDPITUdA50uFT4py"></div>
+  <div class="youtube-lazy" data-id="0i07IbMTH-g?si=LAwsfjNpgVCnoGBl"></div>
 </section>
 
 <section id="contact">
@@ -212,7 +197,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const videos = document.querySelectorAll(".youtube-lazy");
   videos.forEach(div => {
     const id = div.dataset.id;
+    // Lade das YouTube-Vorschaubild
     div.style.backgroundImage = `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`;
+    // Erstelle den Play-Button
+    const play = document.createElement("div");
+    play.className = "play-button";
+    div.appendChild(play);
+    // Ersetze bei Klick das Div durch das echte Iframe
     div.addEventListener("click", () => {
       const iframe = document.createElement("iframe");
       iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
