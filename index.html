@@ -220,8 +220,11 @@ document.addEventListener("DOMContentLoaded", function() {
       iframe.title = "YouTube video player";
       iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
       iframe.allowFullscreen = true;
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
+iframe.style.position = "absolute";
+iframe.style.top = "0";
+iframe.style.left = "0";
+iframe.style.width = "100%";
+iframe.style.height = "100%";
       iframe.style.border = "none";
       el.replaceWith(iframe);
     });
