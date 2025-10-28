@@ -199,27 +199,36 @@ Dominik ist 1988 geboren und in der Schweiz aufgewachsen. Seit er Vanessa im Jah
 </footer>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const videos = document.querySelectorAll(".youtube-lazy");
+  const lazyVideos = document.querySelectorAll(".youtube-lazy");
 
-  videos.forEach(el => {
-    const id = el.dataset.id;
-    const thumb = `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+  lazyVideos.forEach(el => {
+    const videoId = el.dataset.id;
 
-    el.style.backgroundImage = `url('${thumb}')`;
+    // Vorschau-Bild laden
+    el.style.backgroundImage = `url('https://img.youtube.com/vi/${videoId}/hqdefault.jpg')`;
+    el.style.backgroundSize = "cover";
+    el.style.backgroundPosition = "center";
+    el.style.backgroundRepeat = "no-repeat";
+    el.style.position = "relative";
 
+    // Klick-Ereignis
     el.addEventListener("click", () => {
       const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-      iframe.title = "YouTube video player";
-      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.frameBorder = "0";
+      iframe.allow = "autoplay; encrypted-media";
       iframe.allowFullscreen = true;
-iframe.style.position = "absolute";
-iframe.style.top = "0";
-iframe.style.left = "0";
-iframe.style.width = "100%";
-iframe.style.height = "100%";
+
+      // iframe soll Container vollständig ausfüllen
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
       iframe.style.border = "none";
-      el.replaceWith(iframe);
+      iframe.style.display = "block";
+      iframe.style.borderRadius = "10px";
+
+      // Entfernt Play-Button und ersetzt durch das Video
+      el.innerHTML = "";
+      el.appendChild(iframe);
     });
   });
 });
