@@ -168,12 +168,14 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
 <!-- 🔸 Slideshow Ende -->
 </section>
 
-<section id="videos" style="text-align:center;">
+<section id="video" style="text-align:center;">
   <h2>Unsere Videos</h2>
 
-  <div class="youtube-lazy" data-id="HROVmgfjURw?si=vKNY5qWkckn6w666"></div>
-  <div class="youtube-lazy" data-id="QYg4Pf0vNTQ?si=pDPITUdA50uFT4py"></div>
-  <div class="youtube-lazy" data-id="0i07IbMTH-g?si=LAwsfjNpgVCnoGBl"></div>
+  <!-- Video-Container -->
+  <div class="video-wrapper" data-video-id="HROVmgfjURw?si=vKNY5qWkckn6w666"></div>
+  <div class="video-wrapper" data-video-id="QYg4Pf0vNTQ?si=pDPITUdA50uFT4py"></div>
+  <div class="video-wrapper" data-video-id="0i07IbMTH-g?si=LAwsfjNpgVCnoGBl"></div>
+
 </section>
 
 <section id="contact">
@@ -192,32 +194,45 @@ Dominik was born in 1988 and grew up in Switzerland. Since meeting Vanessa in 20
 <footer>
 <p>© 2025 Vanessa & Dominik – Diving and Holidays in Malapascua</p>
 </footer>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const videos = document.querySelectorAll(".youtube-lazy");
-  videos.forEach(div => {
-    const id = div.dataset.id;
-    // Lade das YouTube-Vorschaubild
-    div.style.backgroundImage = `url(https://img.youtube.com/vi/${id}/hqdefault.jpg)`;
-    // Erstelle den Play-Button
-    const play = document.createElement("div");
-    play.className = "play-button";
-    div.appendChild(play);
-    // Ersetze bei Klick das Div durch das echte Iframe
-    div.addEventListener("click", () => {
-      const iframe = document.createElement("iframe");
-      iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-      iframe.frameBorder = "0";
-      iframe.allowFullscreen = true;
-      iframe.loading = "lazy";
-      iframe.style.width = "100%";
-      iframe.style.height = "100%";
-      div.replaceWith(iframe);
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const videos = document.querySelectorAll(".video-wrapper");
+
+    videos.forEach(video => {
+      const id = video.dataset.videoId;
+      video.innerHTML = `
+        <div class="video-thumb" style="position:relative;cursor:pointer;">
+          <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg"
+               alt="Video Vorschau"
+               style="width:100%;border-radius:10px;"
+               loading="lazy">
+          <div style="
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            font-size:60px;
+            color:white;
+            text-shadow:0 0 10px rgba(0,0,0,0.7);">
+            ▶
+          </div>
+        </div>
+      `;
+
+      video.addEventListener("click", () => {
+        video.innerHTML = `
+          <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/${id}?autoplay=1"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%;border-radius:10px;">
+          </iframe>`;
+      });
     });
   });
-});
-</script>
-
+  </script>
 </body>
 <!-- 🔸 Slideshow Script -->
 <script>
